@@ -23,12 +23,9 @@ body {
   margin: 2rem;
 }
 
-h1 {
-  padding-bottom: 2rem;
-}
-
-p {
-  white-space: pre-line;
+h2 {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
 footer {
@@ -83,3 +80,11 @@ footer > #footer-center {
     font-size: 18px;
   } */
 }
+
+a {
+  text-decoration: underline;
+  color: #eee;
+}
+a:visited { color: #eee; }
+a:hover { color: #8fbfdc; }
+
