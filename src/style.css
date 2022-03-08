@@ -1,6 +1,6 @@
 @font-face {
     font-family: "MesloLGS NF";
-    src: url("src/MesloLGS NF Regular.ttf");
+    src: url("assets/MesloLGS NF Regular.ttf") format("truetype");
 }
 
 * {
@@ -20,15 +20,21 @@ body {
   flex-direction: column;
   font-family: "MesloLGS NF";
   color: #eee;
+  margin: 2rem;
 }
 
-h1, p {
-  padding: 2rem;
+h1 {
+  padding-bottom: 2rem;
+}
+
+p {
+  white-space: pre-line;
 }
 
 footer {
   position: fixed;
-  bottom:0;
+  bottom: 0;
+  left: 0;
   width:100%;
   display: flex;
   flex-direction: row;
