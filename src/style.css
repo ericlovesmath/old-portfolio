@@ -76,4 +76,10 @@ footer > #footer-center {
     background-color: #8fbfdc;
     color: #000;
   }
+  /* footer > #footer-mode {
+    font-size: 0px;
+  }
+  footer > #footer-mode::first-letter {
+    font-size: 18px;
+  } */
 }
