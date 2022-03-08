@@ -63,3 +63,17 @@ footer > #footer-center {
   color: #adadad;
   flex: 1;
 }
+
+/* Mobile Footer */
+@media only screen and (max-width: 600px) {
+  footer > #footer-center {
+    font-size: 0;
+  }
+  footer > #footer-distance {
+    display: none;
+  }
+  footer > #footer-percent {
+    background-color: #8fbfdc;
+    color: #000;
+  }
+}
