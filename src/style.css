@@ -24,6 +24,26 @@ body {
   font-size: 18px;
 }
 
+header {
+  background-color: #4e4e4e;
+  color: #adadad;
+  display: flex;
+  flex-direction: horizontal;
+  white-space: pre-wrap;
+}
+
+header > .current-tab {
+  background-color: #282c32;
+}
+
+header > .current-tab > span {
+  color: red;
+}
+
+h1 {
+  padding-top: 2rem;
+}
+
 h2 {
   padding-top: 2rem;
   padding-bottom: 1rem;
@@ -62,7 +82,9 @@ footer > #footer-center {
   flex: 1;
 }
 
-.short-text { display: none; }
+.short-text {
+  display: none;
+}
 
 /* Mobile Footer */
 @media only screen and (max-width: 600px) {
