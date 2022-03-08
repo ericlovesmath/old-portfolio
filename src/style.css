@@ -21,6 +21,7 @@ body {
   font-family: "MesloLGS NF";
   color: #eee;
   margin: 2rem;
+  font-size: 18px;
 }
 
 h2 {
@@ -61,6 +62,8 @@ footer > #footer-center {
   flex: 1;
 }
 
+.short-text { display: none; }
+
 /* Mobile Footer */
 @media only screen and (max-width: 600px) {
   footer > #footer-center {
@@ -73,12 +76,12 @@ footer > #footer-center {
     background-color: #8fbfdc;
     color: #000;
   }
-  /* footer > #footer-mode {
-    font-size: 0px;
+  .short-text {
+    display: inline-block;
   }
-  footer > #footer-mode::first-letter {
-    font-size: 18px;
-  } */
+  .full-text {
+    display: none;
+  }
 }
 
 a {
