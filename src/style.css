@@ -1,8 +1,59 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+    font-family: "MesloLGS NF";
+    src: url("src/MesloLGS NF Regular.ttf");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: #282c32;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: "MesloLGS NF";
+  color: #eee;
+}
+
+h1, p {
+  padding: 2rem;
+}
+
+footer {
+  position: fixed;
+  bottom:0;
+  width:100%;
+  display: flex;
+  flex-direction: row;
+}
+
+footer > div {
+  color: #fff;
+  font: 18px "MesloLGS NF";
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 0.2em 0.8em;
+}
+
+footer > #footer-mode,#footer-distance {
+  background-color: #8fbfdc;
+  color: #000;
+}
+
+footer > #footer-page,#footer-percent {
+  background-color: #4e4e4e;
+  color: #adadad;
+}
+
+footer > #footer-center {
+  text-align: left;
+  background-color: #303030;
+  color: #adadad;
+  flex: 1;
 }
