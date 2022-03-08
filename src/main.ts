@@ -1,6 +1,6 @@
 import './style.css'
 
-const tablineElem = document.querySelector("#tabline")!;
+const $tablineElem = document.querySelector("#tabline")!;
 
 main()
 
@@ -10,26 +10,32 @@ function main() {
   createTabBar(tabs, currentTab);
 }
 
+// Tab Bar
+
 function createTabBar(tabs: string[], currentTab: string) {
   tabs.forEach((tabName: string) => {
-    let newTab = document.createElement("div");
-    let barAndIcon = document.createElement("span");
-    if (tabName === currentTab) {
-      newTab.classList.add("current-tab");
-    }
-    barAndIcon.textContent
-
-    newTab.textContent = `▎  ${tabName}  `;
-    tablineElem.appendChild(newTab);
+    createTabBarElem(tabName, currentTab);
   });
 
   let tabCap = document.createElement("div");
   tabCap.textContent = "▎";
-  tablineElem.appendChild(tabCap);
+  $tablineElem.appendChild(tabCap);
 }
 
+function createTabBarElem(tabName: string, currentTab: string) {
+  let newTab = document.createElement("div");
+  if (tabName === currentTab) {
+    newTab.classList.add("current-tab");
+  }
+  newTab.innerHTML = `<span>▎ </span> ${tabName}  `;
+  newTab.onclick = () => { setCurrentTab(newTab) };
+  $tablineElem.appendChild(newTab);
+}
 
-
+function setCurrentTab(tabElem: HTMLDivElement) {
+  $tablineElem.querySelector(".current-tab")?.classList.remove("current-tab");
+  tabElem.classList.add("current-tab");
+}
 
 // Footer Scroll Test
 

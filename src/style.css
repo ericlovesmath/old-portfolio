@@ -28,7 +28,7 @@ header {
   background-color: #4e4e4e;
   color: #adadad;
   display: flex;
-  flex-direction: horizontal;
+  flex-direction: row;
   white-space: pre-wrap;
 }
 
@@ -37,7 +37,7 @@ header > .current-tab {
 }
 
 header > .current-tab > span {
-  color: red;
+  color: #d86e74;
 }
 
 h1 {
