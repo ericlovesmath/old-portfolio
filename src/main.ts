@@ -1,4 +1,4 @@
-import { setBlogs } from './md-blog';
+import { setPage } from './md-pages';
 import './style.css'
 
 const $tablineElem = document.querySelector("#tabline")!;
@@ -6,14 +6,13 @@ const $tablineElem = document.querySelector("#tabline")!;
 main()
 
 function main() {
-  const tabs = ["index.html", "about.html", "projects.html", "contact.html"];
-  const currentTab = "index.html";
+  const tabs = ["index", "about", "projects", "contact"];
+  const currentTab = "index";
   createTabBar(tabs, currentTab);
-  setBlogs("test");
+  setPage("index");
 }
 
 // Tab Bar
-
 function createTabBar(tabs: string[], currentTab: string) {
   tabs.forEach((tabName: string) => {
     createTabBarElem(tabName, currentTab);
@@ -27,20 +26,20 @@ function createTabBar(tabs: string[], currentTab: string) {
 function createTabBarElem(tabName: string, currentTab: string) {
   let newTab = document.createElement("div");
   if (tabName === currentTab) {
-    newTab.classList.add("current-tab");
+    newTab.classList.add("active-tab");
   }
-  newTab.innerHTML = `<span>▎ </span> ${tabName}  `;
-  newTab.onclick = () => { setCurrentTab(newTab) };
+  newTab.innerHTML = `<span class="icon">▎ </span class="text"> ${tabName}.html  `;
+  newTab.onclick = () => { setCurrentTab(newTab, tabName) };
   $tablineElem.appendChild(newTab);
 }
 
-function setCurrentTab(tabElem: HTMLDivElement) {
-  $tablineElem.querySelector(".current-tab")?.classList.remove("current-tab");
-  tabElem.classList.add("current-tab");
+function setCurrentTab(tabElem: HTMLDivElement, tabName: string) {
+  $tablineElem.querySelector(".active-tab")?.classList.remove("active-tab");
+  tabElem.classList.add("active-tab");
+  setPage(tabName);
 }
 
 // Footer Scroll Test
-
 const footerPercentLabel = document.querySelector("#footer-percent")!;
 
 window.addEventListener("scroll", () => {

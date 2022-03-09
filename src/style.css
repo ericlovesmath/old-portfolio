@@ -24,6 +24,10 @@ body {
   font-size: 18px;
 }
 
+ul {
+  list-style: "- " inside;
+}
+
 header {
   background-color: #4e4e4e;
   color: #adadad;
@@ -36,11 +40,19 @@ header > div {
   cursor: pointer;
 }
 
-header > .current-tab {
+header > div:hover {
+  color: #eee;
+}
+
+header > div > .icon {
+  color: #adadad;
+}
+
+header > .active-tab {
   background-color: #282c32;
 }
 
-header > .current-tab > span {
+header > .active-tab > .icon {
   color: #d86e74;
 }
 
