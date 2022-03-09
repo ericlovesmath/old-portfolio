@@ -4,6 +4,7 @@
     "useDefineForClassFields": true,
     "module": "ESNext",
     "lib": ["ESNext", "DOM", "DOM.ITERABLE"],
+    "types": ["vite/client"],
     "moduleResolution": "Node",
     "strict": true,
     "sourceMap": true,

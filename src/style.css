@@ -32,6 +32,10 @@ header {
   white-space: pre-wrap;
 }
 
+header > div {
+  cursor: pointer;
+}
+
 header > .current-tab {
   background-color: #282c32;
 }

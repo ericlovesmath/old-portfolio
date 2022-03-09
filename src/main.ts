@@ -1,3 +1,4 @@
+import { setBlogs } from './md-blog';
 import './style.css'
 
 const $tablineElem = document.querySelector("#tabline")!;
@@ -8,6 +9,7 @@ function main() {
   const tabs = ["index.html", "about.html", "projects.html", "contact.html"];
   const currentTab = "index.html";
   createTabBar(tabs, currentTab);
+  setBlogs("test");
 }
 
 // Tab Bar
