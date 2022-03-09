@@ -1,40 +1,38 @@
 import { setPage } from './md-pages';
 import './style.css'
 
-const $tablineElem = document.querySelector("#tabline")!;
+const $tabline = document.querySelector("#tabline")!;
 
 main()
 
 function main() {
-  const tabs = ["index", "about", "projects", "contact"];
-  const currentTab = "index";
-  createTabBar(tabs, currentTab);
+  initTabBar();
   setPage("index");
 }
 
 // Tab Bar
-function createTabBar(tabs: string[], currentTab: string) {
-  tabs.forEach((tabName: string) => {
-    createTabBarElem(tabName, currentTab);
-  });
+function initTabBar() {
+  for (let i = 0; i < $tabline.children.length; i++) {
 
-  let tabCap = document.createElement("div");
-  tabCap.textContent = "▎";
-  $tablineElem.appendChild(tabCap);
-}
+    let $tab = $tabline.children[i] as HTMLDivElement;
+    let tabName = $tab.dataset.url!;
 
-function createTabBarElem(tabName: string, currentTab: string) {
-  let newTab = document.createElement("div");
-  if (tabName === currentTab) {
-    newTab.classList.add("active-tab");
+    if (tabName === "index") {
+      $tab.classList.add("active-tab");
+    }
+
+    if (tabName === "cap") {
+      $tab.innerHTML = '<span class="icon">▎</span class="text">';
+    } else {
+      $tab.innerHTML = `<span class="icon">▎ </span class="text"> ${tabName}.html  `;
+      $tab.onclick = () => { setCurrentTab($tab, tabName) };
+    }
+
   }
-  newTab.innerHTML = `<span class="icon">▎ </span class="text"> ${tabName}.html  `;
-  newTab.onclick = () => { setCurrentTab(newTab, tabName) };
-  $tablineElem.appendChild(newTab);
 }
 
 function setCurrentTab(tabElem: HTMLDivElement, tabName: string) {
-  $tablineElem.querySelector(".active-tab")?.classList.remove("active-tab");
+  $tabline.querySelector(".active-tab")?.classList.remove("active-tab");
   tabElem.classList.add("active-tab");
   setPage(tabName);
 }
