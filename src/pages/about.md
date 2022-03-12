@@ -12,3 +12,21 @@ tags: #aboutpage
 - 18 year old student
 - Senior at Corona del Mar High School
 - Planning on majoring in CS/Math
+
+### College: Accepted
+
+- Caltech
+- Purdue
+- University of Michigan
+- University of Illinois Urbana-Champaign
+- UC Davis
+
+### College: Rejected
+
+- University of Chicago
+
+### College: Waiting
+
+- MIT, Stanford, Princeton, Carnegie Mellon
+- Yale, Cornell, UC Berkeley
+- USC, UCLA, UCSD, UCSB
