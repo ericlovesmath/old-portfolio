@@ -20,6 +20,7 @@ tags: #aboutpage
 - University of Michigan
 - University of Illinois Urbana-Champaign
 - UC Davis
+- UCI
 
 ### College: Rejected
 
