@@ -24,10 +24,11 @@ tags: #aboutpage
 
 ### College: Rejected
 
-- University of Chicago
+- University of Chicago (Defer to Regular)
+- MIT (Defer to Regular)
 
 ### College: Waiting
 
-- MIT, Stanford, Princeton, Carnegie Mellon
+- Stanford, Princeton, Carnegie Mellon
 - Yale, Cornell, UC Berkeley
 - USC, UCLA, UCSD, UCSB
