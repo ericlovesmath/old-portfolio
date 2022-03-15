@@ -1,4 +1,5 @@
 import { setPage } from './md-pages';
+import { updateFooterScroll } from './footer';
 import './style.css'
 
 const $tabline = document.querySelector("#tabline")!;
@@ -6,28 +7,20 @@ const $tabline = document.querySelector("#tabline")!;
 main()
 
 function main() {
-  initTabBar();
+  initTabBar("index");
   setPage("index");
 }
 
 // Tab Bar
-function initTabBar() {
+function initTabBar(startTab: string) {
   for (let i = 0; i < $tabline.children.length; i++) {
-
     let $tab = $tabline.children[i] as HTMLDivElement;
     let tabName = $tab.dataset.url!;
-
-    if (tabName === "index") {
+    if (tabName === startTab) {
       $tab.classList.add("active-tab");
     }
-
-    if (tabName === "cap") {
-      $tab.innerHTML = '<span class="icon">▎</span class="text">';
-    } else {
-      $tab.innerHTML = `<span class="icon">▎ </span class="text"> ${tabName}.html  `;
-      $tab.onclick = () => { setCurrentTab($tab, tabName) };
-    }
-
+    $tab.innerHTML = `<span class="icon">[ </span class="text"> ${tabName}.html <span class="icon">]</span>`;
+    $tab.onclick = () => { setCurrentTab($tab, tabName) };
   }
 }
 
@@ -37,20 +30,6 @@ function setCurrentTab(tabElem: HTMLDivElement, tabName: string) {
   setPage(tabName);
 }
 
-// Footer Scroll Test
-const footerPercentLabel = document.querySelector("#footer-percent")!;
-
 window.addEventListener("scroll", () => {
-  let scrollTop = window.scrollY;
-  let docHeight = document.body.offsetHeight;
-  let winHeight = window.innerHeight;
-  console.log(scrollTop, docHeight, winHeight);
-  console.log(window.pageYOffset);
-  let scrollPercent = scrollTop / (docHeight - winHeight);
-  if (docHeight == winHeight) {
-    scrollPercent = 1;
-  }
-  let scrollPercentRounded = Math.round(scrollPercent * 100);
-  footerPercentLabel.innerHTML = `${scrollPercentRounded}%`;
+  updateFooterScroll();
 });
-

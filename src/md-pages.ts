@@ -14,6 +14,6 @@ export function setPage(filename: string) {
   let blogContent = pages[parsed_filename];
   let html = conv.makeHtml(blogContent);
   // let metadata = conv.getMetadata();
-  document.getElementById('markdown-content')!.innerHTML = html;
+  document.getElementById('markdown-container')!.innerHTML = html;
 }
 
