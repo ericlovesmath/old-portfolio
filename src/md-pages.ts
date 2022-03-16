@@ -7,20 +7,46 @@ const $contentContainer = document.getElementById('content-container')!;
 const PARSED_BLOGS: metadata[] = [];
 
 export function setPage(filename: string) {
-  let parsed_filename = `./pages/${filename}.md`;
-  if (!(parsed_filename in pages)) {
-    console.log(`Error: "${filename}" not in blogs`);
+  if (!(filename in pages) && !(filename in blogs)) {
+    console.log(`Error: "${filename}" not in pages or blogs`);
     return;
   }
-  let pageContent = pages[parsed_filename];
-  let html = conv.makeHtml(pageContent);
-  // let metadata = conv.getMetadata();
-  $contentContainer.innerHTML = html;
+
+  let pageContent;
+  if (filename in pages) {
+    pageContent = pages[filename];
+  } else {
+    pageContent = blogs[filename];
+  }
+
+  $contentContainer.innerHTML = conv.makeHtml(pageContent);
 }
 
-export function showBlogs() {
-  parseBlogs();
+export function setBlogPreviews() {
+  $contentContainer.innerHTML = "";
+
+  let title = document.createElement('h1');
+  let $listContainer = document.createElement('ul');
+  title.textContent = "Blog Posts";
+
+  $contentContainer.appendChild(title)
+  $contentContainer.appendChild($listContainer);
+  showBlogs($listContainer);
+}
+
+function showBlogs(listContainer: HTMLUListElement) {
+  if (PARSED_BLOGS.length == 0) {
+    parseBlogs();
+  }
   console.log(PARSED_BLOGS);
+  PARSED_BLOGS.forEach((blog: metadata) => {
+    let link = document.createElement('a');
+    link.onclick = () => { setPage(blog.filepath) };
+    link.innerText = blog.title;
+    let linkItem = document.createElement('li');
+    linkItem.appendChild(link);
+    listContainer.appendChild(linkItem);
+  })
 }
 
 function parseBlogs() {

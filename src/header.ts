@@ -1,4 +1,4 @@
-import { setPage, showBlogs } from "./md-pages";
+import { setBlogPreviews, setPage } from "./md-pages";
 
 const $tabline = document.querySelector("#tabline")!;
 
@@ -12,15 +12,16 @@ export function initTabBar(startTab: string) {
     $tab.innerHTML = `<span class="icon">[ </span class="text"> ${tabName}.html <span class="icon">]</span>`;
     $tab.onclick = () => { setCurrentTab($tab, tabName) };
   }
+  setPage(`./pages/${startTab}.md`);
 }
 
 function setCurrentTab(tabElem: HTMLDivElement, tabName: string) {
   $tabline.querySelector(".active-tab")?.classList.remove("active-tab");
   tabElem.classList.add("active-tab");
   if (tabName === "blog") {
-    showBlogs();
+    setBlogPreviews();
   } else {
-    setPage(tabName);
+    setPage(`./pages/${tabName}.md`);
   }
 }
 

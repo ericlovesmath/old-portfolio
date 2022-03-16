@@ -66,10 +66,11 @@ header > .active-tab > .icon {
 
 h1 {
   padding-top: 2rem;
+  padding-bottom: 1rem;
 }
 
-h2,h3 {
-  padding-top: 2rem;
+h2,h3,p {
+  padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
