@@ -22,11 +22,11 @@ body {
   font-size: 18px;
 }
 
-#markdown-container {
+#content-container {
   display: flex;
   flex-direction: column;
   color: #eee;
-  margin: 0rem 2rem;
+  margin: 0rem 2rem 3rem;
   font-size: 18px;
 }
 

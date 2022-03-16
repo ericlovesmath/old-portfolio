@@ -1,5 +1,10 @@
 const footerPercentLabel = document.querySelector("#footer-percent")!;
 
+export function initFooter() {
+  window.addEventListener("scroll", () => {
+    updateFooterScroll();
+  });
+}
 
 export function updateFooterScroll() {
   let scrollTop = window.scrollY; // How much scrolled
@@ -12,6 +17,4 @@ export function updateFooterScroll() {
   scrollPercent = Math.min(Math.max(scrollPercent, 0), 1)
   let scrollPercentRounded = Math.round(scrollPercent * 100);
   footerPercentLabel.innerHTML = `${scrollPercentRounded}%`;
-
 }
-
