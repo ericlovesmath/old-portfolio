@@ -38,7 +38,7 @@ function showBlogs(listContainer: HTMLUListElement) {
   if (PARSED_BLOGS.length == 0) {
     parseBlogs();
   }
-  console.log(PARSED_BLOGS);
+  // console.log(PARSED_BLOGS);
   PARSED_BLOGS.forEach((blog: metadata) => {
     let link = document.createElement('a');
     link.onclick = () => { setPage(blog.filepath) };
@@ -52,7 +52,7 @@ function showBlogs(listContainer: HTMLUListElement) {
 function parseBlogs() {
   for (let key in blogs) {
     let blogContent = blogs[key];
-    let html = conv.makeHtml(blogContent);
+    conv.makeHtml(blogContent);
     let metadata = parseMetadata(key, conv.getMetadata() as Showdown.Metadata);
     // PARSED_BLOGS[metadata.id] = metadata;
     PARSED_BLOGS.push(metadata);

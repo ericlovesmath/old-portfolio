@@ -3,49 +3,31 @@
     src: url("assets/MesloLGS NF Regular.ttf") format("truetype");
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 html {
+  font-size: 18px;
+  max-width: 100%;
   height: 100%;
+  font-family: "MesloLGS NF";
 }
 
 body {
+  color: #eee;
   background-color: #282c32;
   display: flex;
   flex-direction: column;
-  font-family: "MesloLGS NF";
-  color: #eee;
-  font-size: 18px;
 }
 
-#content-container {
-  display: flex;
-  flex-direction: column;
-  color: #eee;
-  margin: 0rem 2rem 3rem;
-  font-size: 18px;
-}
-
-ul {
-  list-style: "- " inside;
-}
+/* Body Contents */
 
 header {
   background-color: #4e4e4e;
   color: #adadad;
-  margin: 2rem;
-  margin-bottom: 0;
-  /* padding: 0.5rem; */
+  margin: 1rem;
 }
 
 header > div {
   cursor: pointer;
   float: left;
-  clear: none;
 }
 
 header > div:hover {
@@ -64,14 +46,14 @@ header > .active-tab > .icon {
   color: #d86e74;
 }
 
-h1 {
-  padding-top: 2rem;
-  padding-bottom: 1rem;
-}
-
-h2,h3,p {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+#content-container {
+  margin: 0 auto;
+  max-width: 48rem;
+  line-height: 1.45;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
+  margin-bottom: 2rem;
 }
 
 footer {
@@ -84,18 +66,16 @@ footer {
 }
 
 footer > div {
-  color: #fff;
-  font: 18px "MesloLGS NF";
   text-align: center;
   padding: 0.2em 0.8em;
 }
 
-footer > #footer-mode,#footer-distance {
+footer > #footer-mode, #footer-distance {
   background-color: #8fbfdc;
   color: #000;
 }
 
-footer > #footer-page,#footer-percent {
+footer > #footer-page, #footer-percent {
   background-color: #4e4e4e;
   color: #adadad;
 }
@@ -107,8 +87,67 @@ footer > #footer-center {
   flex: 1;
 }
 
+/* Essential Text Formatting (General) */
+
 .short-text {
   display: none;
+}
+
+pre {
+  padding: .5rem;
+  line-height: 1.25;
+  overflow-x: scroll;
+}
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1.3rem;
+}
+
+h1, h2, h3, h4 {
+  margin: 1.414rem 0 .5rem;
+  font-weight: inherit;
+  line-height: 1.42;
+}
+
+h1, h2, h3 {
+  border-bottom: 2px solid #eee;
+  margin-bottom: 1.15rem;
+  padding-bottom: 0.5rem;
+  text-align: center;
+}
+
+h1 { font-size: 2rem }
+h2 { font-size: 1.5rem }
+h3 { font-size: 1.17rem }
+h4 { font-size: 1rem }
+h5 { font-size: 0.83rem }
+h6 { font-size: 0.67rem }
+
+img, canvas, iframe, video, svg, select, textarea {
+  max-width: 100%;
+}
+
+blockquote {
+  border-left: 8px solid #eee;
+  padding: 1rem;
+}
+
+pre, code {
+  background-color: #444;
+}
+
+ul {
+  list-style: "- " outside;
+}
+
+a, a:visited {
+  text-decoration: underline;
+  color: #eee;
+}
+
+a:hover, a:focus, a:active {
+  color: #8fbfdc;
 }
 
 /* Mobile Footer */
@@ -131,10 +170,8 @@ footer > #footer-center {
   }
 }
 
-a {
-  text-decoration: underline;
-  color: #eee;
+@media only screen and (max-width: 48rem) {
+  html {
+    font-size: 16px;
+  }
 }
-a:visited { color: #eee; }
-a:hover { color: #8fbfdc; }
-

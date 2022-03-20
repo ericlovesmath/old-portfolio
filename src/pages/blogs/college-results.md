@@ -16,7 +16,7 @@ Caltech is significantly different from some of the other schools that I applied
 
 Whatever the case, college isn't supposed to be the "end-all-be-all", and I hope it all works out in the end.
 
-### College: Accepted
+## College: Accepted
 
 - Caltech, University of Michigan
 - Purdue, UIUC, UCI, UC Davis
@@ -30,5 +30,4 @@ Whatever the case, college isn't supposed to be the "end-all-be-all", and I hope
 - Stanford, Princeton, Carnegie Mellon
 - Yale, Cornell, UC Berkeley
 - USC, UCLA, UCSD, UCSB
-
 
