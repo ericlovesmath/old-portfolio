@@ -49,11 +49,11 @@ header > .active-tab > .icon {
 #content-container {
   margin: 0 auto;
   max-width: 48rem;
+  padding: 0rem 0.8rem 2rem;
   line-height: 1.45;
   display: flex;
   flex-direction: column;
   color: #eee;
-  margin-bottom: 2rem;
 }
 
 footer {

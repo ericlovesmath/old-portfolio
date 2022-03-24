@@ -1,5 +1,5 @@
 ---
-title: On Veganism 
+title: On Veganism - The Philosophical Argument
 description: My current opinion of veganism, and why I'm seriously considering it out of respect for philosophical consistency
 date: 2022-03-18
 id: 1
